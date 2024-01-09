@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        screens: {
+          sm: '480px',
+          md: '768px',
+          lg: '976px',
+          xl: '1440px'
+        },
+        extend: {
+          colors: {
+            // from Tailwind Docs
+            clifford: '#da373d',
+            // from Traversy crash course
+            brightRed: 'hsl(12, 88%, 59%)',
+          }
+        },
+      }
+    }
+  </script>
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .content-auto {
+        content-visibility: auto;
+      }
+    }
+  </style>
+
+</head>
+<body>
+  <h1 class="text-3xl font-bold underline">
+    Hello world!
+  </h1>
+  <p class="text-clifford">It's bad luck to write your name in this color</p>
+  <div class="list-disc marker:text-blue-300">
+    <li>What does this do?</li>
+    <li class="selection:bg-emerald-300">What does this do?</li>
+  </div>
+  <button
+    class="bg-green-500 text-white font-bold
+           py-3 px-4 rounded-lg text-center">
+    Click Me
+  </button>
+
+<!-- from Modern CSS w/ Tailwind, 2e -->
+  <article class="prose">
+    <p>All your text. It's bad luck to write your name in this color</p>
+  </article>
+
+</body>
+</html>
